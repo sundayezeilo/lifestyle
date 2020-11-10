@@ -63,6 +63,9 @@ end
 group :test do
   gem 'capybara', '~> 3.33'
   gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
+  # gem 'guard', '~> 2.16', '>= 2.16.2'
+  # gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
+  gem 'guard-rspec', require: false
   gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
   gem 'webdrivers', '4.3.0'
 end
