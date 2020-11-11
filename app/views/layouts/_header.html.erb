@@ -21,7 +21,11 @@
         <li><%= link_to "Entertainment", '#' %></li>
         <li><%= link_to "Magazine", '#' %></li>
         <li><%= link_to "TV", '#' %></li>
-        <li><%= link_to "Log in", new_user_session_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Log in", new_user_session_path %></li>
+        <% end %>
         <li><%= link_to "Register", new_user_registration_path %></li>
       </ul>
     </nav>

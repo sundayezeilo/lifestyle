@@ -8,4 +8,8 @@ module ApplicationHelper
       "#{page_title} | #{base_title}"
     end
   end
+
+  def get_alert_type(message_type)
+    message_type == 'notice' ? 'success' : 'danger'
+  end
 end
