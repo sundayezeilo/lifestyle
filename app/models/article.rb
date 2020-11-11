@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   belongs_to :author, class_name: 'User'
-  has_and_belongs_to_many :category
+  has_and_belongs_to_many :categories
   # has_one_attached :image
   default_scope -> { order(created_at: :desc) }
   validates :category_id, presence: true
