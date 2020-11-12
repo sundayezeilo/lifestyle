@@ -1,6 +1,6 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header id="header" class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Lifestyle Articles", root_path, id: "logo" %>
+    <a href="/" id="logo">LiFEsTyle<span class="dot"></span></a>
     <nav>
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed"
@@ -14,13 +14,13 @@
         </button>
       </div>
       <ul class="nav navbar-nav navbar-right collapse navbar-collapse"id="bs-example-navbar-collapse-1">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Fashon", '#' %></li>
-        <li><%= link_to "Business", '#' %></li>
-        <li><%= link_to "Sports", '#' %></li>
-        <li><%= link_to "Entertainment", '#' %></li>
-        <li><%= link_to "Magazine", '#' %></li>
-        <li><%= link_to "TV", '#' %></li>
+        <li class="nav-link"><%= link_to "Home", root_path %></li>
+        <li class="nav-link"><%= link_to "Fashon", '#' %></li>
+        <li class="nav-link"><%= link_to "Business", '#' %></li>
+        <li class="nav-link"><%= link_to "Sports", '#' %></li>
+        <li class="nav-link"><%= link_to "Entertainment", '#' %></li>
+        <li class="nav-link"><%= link_to "Magazine", '#' %></li>
+        <li class="nav-link"><%= link_to "TV", '#' %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
