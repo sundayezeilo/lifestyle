@@ -1,4 +1,3 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
 
 /* mixins, variables, etc. */
@@ -22,7 +21,7 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 body {
-  padding-top: 60px;
+  margin-top: 80px;
   background-color: #4d423c;
 }
 
@@ -42,7 +41,7 @@ textarea {
 }
 
 /* typography */
-$light-gray: #777;
+$gray-light: #777;
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -69,19 +68,13 @@ p {
   line-height: 1.7em;
 }
 
-/* header */
-#header {
-  background-color: #fff;
-  margin: 8px;
-}
-
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
   color: #4e443e;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-bottom: 4px;
   font-weight: bold;
 
   &:hover {
@@ -99,7 +92,7 @@ p {
   }
 }
 
-.navbar-inverse .navbar-nav {
+.navbar-nav {
   li > a {
     color: #a39f9c;
 
@@ -110,19 +103,18 @@ p {
    }
   }
 
-  li:first-of-type > a{
-    color: #fba36e;
+  .active > a {
+    color: #fba36e !important;
   }
   text-transform: uppercase;
 }
-
 
 /* footer */
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: $light-gray;
+  color: $gray-light;
   a {
     color: #555;
     &:hover {
@@ -168,7 +160,6 @@ input,
 textarea,
 select,
 .uneditable-input {
-  border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
@@ -178,7 +169,6 @@ input {
   height: auto !important;
 }
 
-
 #error_explanation {
   color: red;
   h2 {
@@ -186,19 +176,14 @@ input {
     margin: 0 0 30px 0;
   }
 }
-  .field_with_errors {
-  @extend .has-error;
-  .form-control {
-  color: $state-danger-text;
-  }
-}
 
 .checkbox {
-  margin-top: -10px;
+  margin-top: -15px !important;
   margin-bottom: 10px;
   
   span {
-  font-weight: normal;
+    margin-left: 20px;
+    font-weight: normal;
   }
 }
 
@@ -212,20 +197,14 @@ textarea {
   margin-bottom: 5px;
 }
 
-
-
-.article-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 300px;
-
-  .article-body {
-    background-color: #fcfcfc;
+.media {
+  img {
+    max-width: 100px;
+    height: 200px;
   }
 
-  div > img {
-    width: 100px;
-    height: 100px;
+  .media-body {
+    background-color: #fcfcfc;
+    padding-left: 12px;
   }
 }

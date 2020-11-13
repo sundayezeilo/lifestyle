@@ -4,7 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.1'
 
 gem 'active_storage_validations', '~> 0.9.0'
-gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+# gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'bootstrap', '~> 4.5', '>= 4.5.3'
 gem 'bootstrap-will_paginate', '~> 1.0'
 gem 'image_processing', '~> 1.12', '>= 1.12.1'
 gem 'mini_magick', '~> 4.11'
@@ -17,6 +18,9 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
+gem 'sprockets-rails', '~> 3.2', '>= 3.2.2'
+gem 'jquery-rails'
+
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

@@ -1,6 +1,7 @@
 <% provide(:title, 'New Article') %>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h1>Write a new article</h1>
     <%= form_with(model: @article, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :title %>
@@ -11,7 +12,7 @@
       </div>
       <%= f.submit "Create", class: "btn btn-primary" %>
       <span class="image">
-        <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+        <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png", style:"width: inherit;" %>
       </span>
     <% end %>
 
