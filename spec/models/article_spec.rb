@@ -12,6 +12,51 @@ RSpec.describe Article, type: :model do
       @category.save
     end
 
+    describe 'validations' do
+      it 'should be valid' do
+        @article.categories << @category
+        expect(@article).to be_valid
+      end
+
+      it 'should have a author attribute' do
+        expect(@article).to respond_to(:author)
+      end
+
+      it 'should have a title attribute' do
+        expect(@article).to respond_to(:title)
+      end
+
+      it 'should have a text attribute' do
+        expect(@article).to respond_to(:text)
+      end
+
+      it 'should have a title attribute' do
+        expect(@article).to respond_to(:title)
+      end
+    end
+
+    describe 'associations' do
+      context 'with categories' do
+        it 'should respond to categories' do
+          expect(@article).to respond_to(:categories)
+        end
+      end
+
+      context 'with author' do
+        it 'should respond to author' do
+          expect(@article).to respond_to(:author)
+        end
+
+        it 'should be destroyed with associated author' do
+          @article.categories << @category
+          @article.save
+          author = @article.author
+          User.find(author.id).destroy
+          expect(Article.find_by(author: author)).to be_nil
+        end
+      end
+    end
+
     context 'with invalid attributes' do
       it 'should not be valid without an author' do
         @article.author = nil
