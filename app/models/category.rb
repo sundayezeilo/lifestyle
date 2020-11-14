@@ -3,4 +3,8 @@ class Category < ApplicationRecord
   default_scope -> { order('priority') }
   validates :priority, presence: true
   validates :name, presence: true, length: { maximum: 15 }
+
+  def name_capitalize
+    name.capitalize
+  end
 end

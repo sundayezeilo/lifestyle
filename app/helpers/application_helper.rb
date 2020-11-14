@@ -10,6 +10,6 @@ module ApplicationHelper
   end
 
   def get_alert_type(message_type)
-    message_type == 'notice' ? 'success' : 'danger'
+    (message_type == 'notice') || (message_type == 'success') ? 'success' : 'danger'
   end
 end

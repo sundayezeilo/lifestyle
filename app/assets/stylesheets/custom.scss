@@ -71,11 +71,11 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 2em;
   color: #4e443e;
   letter-spacing: -1px;
-  padding-bottom: 4px;
   font-weight: bold;
+  font-family: "acumin-pro","Acumin Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 
   &:hover {
     color: inherit;
@@ -83,12 +83,13 @@ p {
   }
 
   .dot {
-    height: 8px;
-    width: 8px;
-    margin-left: 2px;
+    height: 12px;
+    width: 12px;
+    margin-left: 3px;
     background-color: #f76107;
     border-radius: 50%;
     display: inline-block;
+    // margin-bottom: 4px;
   }
 }
 
@@ -199,12 +200,43 @@ textarea {
 
 .media {
   img {
-    max-width: 100px;
-    height: 200px;
+    width: 50%;
+    height: 100%;
   }
 
   .media-body {
+    width: 50%;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     background-color: #fcfcfc;
     padding-left: 12px;
+    color: #877;
+
+
+    .cat-heading {
+      display: inline-block;
+      color:  #fb3;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-bottom: 2px solid #fb3;
+      // padding-bottom: 1px;
+    }
+
+    .media-title {
+      margin-top: 12px !important;
+      color: #988;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+}
+
+.media-link {
+  &:hover {
+    text-decoration: none;
   }
 }

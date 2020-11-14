@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   has_one_attached :image
   default_scope -> { order(created_at: :desc) }
   validates :author_id, presence: true
+  validates :categories, presence: true
   validates :title, presence: true, length: { maximum: 50 }
   validates :text, presence: true, length: { maximum: 300 }
   
