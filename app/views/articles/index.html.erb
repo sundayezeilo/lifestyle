@@ -1,6 +1,7 @@
 <% provide(:title, 'Category Name') %>
 
-<div class="row no-gutters mt-4">
+<div class="row no-gutters">
+<% if @articles.any? %>  
   <% @articles.each do |article| %>
     <div class="col-sm col-md-6">
       <a href="#" class="media-link">
@@ -15,32 +16,22 @@
       </a>
     </div>
   <% end %>
+<% end %>
 </div>
 
-
-<div class="row mt-4 no-gutters">
-
-  <div class="col-sm col-md-6">
-    <a href="#" class="media-link">
-      <div class="media">
-        <img src="/assets/sunny.jpg" alt="Generic placeholder image">
-        <div class="media-body">
-          <h5 class="mt-0">Media heading</h5>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+<div class="row no-gutters">
+  <% @articles.each do |article| %>
+    <div class="col-sm col-md-6">
+      <a href="#" class="media-link">
+        <div class="media">
+          <div class="media-body">
+            <span class="mt-2 cat-heading"><%= article.categories.first.name_capitalize %> </span>
+            <h5 class="mt-0 media-title"><%= article.title %> </h5>
+            <%= article.text %>
+          </div>
+          <%= image_tag article.display_image if article.image.attached? %>
         </div>
-      </div>
-    </a>
-  </div>
-
-  <div class="col-sm col-md-6">
-    <a href="#" class="media-link">
-      <div class="media">
-        <img src="/assets/sunny.jpg" alt="Generic placeholder image">
-        <div class="media-body">
-          <h5 class="mt-0">Media heading</h5>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-        </div>
-      </div>
-    </a>
-  </div>    
+      </a>
+    </div>
+  <% end %>
 </div>

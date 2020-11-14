@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Category.first.articles
+    @articles = Article.all #Category.first.articles
   end
 
   def create
