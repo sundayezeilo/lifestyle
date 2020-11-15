@@ -1,8 +1,11 @@
 class CreateJoinTableArticlesCategories < ActiveRecord::Migration[6.0]
   def change
-    create_join_table :articles, :categories do |t|
-      t.index :article_id
-      t.index :category_id
-    end
+    
+    create_table :articles_categories, id: false do |t|
+      t.bigint :article_id
+      t.bigint :category_id
+    end 
+    add_index :articles_categories, :article_id
+    add_index :articles_categories, :category_id
   end
 end
