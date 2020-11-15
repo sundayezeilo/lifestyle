@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-
   describe 'validations' do
     before { @category = Category.create(name: 'fashion', priority: 1) }
 
@@ -28,10 +27,9 @@ RSpec.describe Category, type: :model do
       Category.create(name: 'business', priority: 2)
       @article.categories << [Category.find_by(priority: 1), Category.find_by(priority: 2)]
       @article.save
-      
+
       @category = Category.create(name: 'fashion', priority: 1)
     end
-
 
     it 'should have articles association' do
       expect(@category).to respond_to(:articles)

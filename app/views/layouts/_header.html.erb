@@ -6,34 +6,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mt-2 mt-lg-0 mr-auto">
-      
         <li class="nav-item active">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         <li>
 
-        <li class="nav-item">
-          <%= link_to "Fashon", articles_url(category_id: fetch_cat_id('fashion')), class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Business", articles_url(category_id: fetch_cat_id('business')), class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Sports", articles_url(category_id: fetch_cat_id('sports')), class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Entertainment", articles_url(category_id: fetch_cat_id('entertainment')), class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Magazine", '#', class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "TV", articles_url(category_id: fetch_cat_id('tv')), class: "nav-link" %>
-        </li>
+        <% Category.all.each do |cat| %>
+          <li class="nav-item">
+            <%= link_to "#{cat.name}", articles_url(category_id: cat.id), class: "nav-link" %>
+          </li>
+        <% end %>
 
         <% if user_signed_in? %>
           <li>

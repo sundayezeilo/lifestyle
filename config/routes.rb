@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'categories#index'
-  get 'categories/new'
+  resources :votes, only: %i[create destroy]
   resources :articles, only: %i[new create index]
   resources :categories, only: %i[new create index]
   devise_for :users
