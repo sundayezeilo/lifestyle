@@ -8,10 +8,10 @@
       <%= f.label :password %>
       <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
       <% if devise_mapping.rememberable? %>
-        <%= f.label :remember_me, class: "checkbox d-inline" do %>
-        <%= f.check_box :remember_me %>
-        <span>Remember me on this computer</span>
-        <% end %>
+      <div class="form-group">
+        <%= f.check_box :remember_me, class: "form-check-input", type: "checkbox" %>
+        <%= f.label "Remember me on this computer", class: "form-check-label" %>
+      </div>
       <% end %>
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>

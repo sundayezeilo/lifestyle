@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Category.find_by(id: params[:category_id]).articles
     @category = Category.find_by(id: params[:category_id])
+    store_location
   end
 
   def create
@@ -22,7 +23,7 @@ class ArticlesController < ApplicationController
       flash[:success] = 'New article was successfully created.'
       redirect_to root_path
     else
-      flash[:danger] = 'Article was not created.'
+      flash[:warning] = 'Article was not created.'
       render :new
     end
   end

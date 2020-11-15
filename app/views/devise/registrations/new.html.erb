@@ -17,5 +17,6 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
       <%= f.submit "Sign up", class: "btn btn-primary" %>
     <% end %>
+    <h5 class="mt-4">Have an account? <%= link_to "Log in", new_user_session_path %></h5>
   </div>
 </div>
