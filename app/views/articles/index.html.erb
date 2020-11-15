@@ -1,37 +1,19 @@
-<% provide(:title, 'Category Name') %>
-
+<% provide(:title, "#{@category.name_capitalize}") %>
 <div class="row no-gutters">
-<% if @articles.any? %>  
-  <% @articles.each do |article| %>
-    <div class="col-sm col-md-6">
-      <a href="#" class="media-link">
-        <div class="media">
-          <%= image_tag article.display_image if article.image.attached? %>
-          <div class="media-body">
-            <span class="mt-2 cat-heading"><%= article.categories.first.name_capitalize %> </span>
-            <h5 class="mt-0 media-title"><%= article.title %> </h5>
-            <%= article.text %>
+  <% if @articles.any? %>  
+    <% @articles.each do |article| %>
+      <div class="col-sm col-md-6">
+        <a href="#" class="media-link">
+          <div class="media">
+            <%= image_tag(article.display_image) if article.image.attached? %>
+            <div class="media-body">
+              <span class="mt-2 cat-heading"><%= @category.name_capitalize %> </span>
+              <h5 class="mt-0 media-title"><%= article.title %> </h5>
+              <%= article.text %>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-  <% end %>
-<% end %>
-</div>
-
-<div class="row no-gutters">
-  <% @articles.each do |article| %>
-    <div class="col-sm col-md-6">
-      <a href="#" class="media-link">
-        <div class="media">
-          <div class="media-body">
-            <span class="mt-2 cat-heading"><%= article.categories.first.name_capitalize %> </span>
-            <h5 class="mt-0 media-title"><%= article.title %> </h5>
-            <%= article.text %>
-          </div>
-          <%= image_tag article.display_image if article.image.attached? %>
-        </div>
-      </a>
-    </div>
+        </a>
+      </div>
+    <% end %>
   <% end %>
 </div>

@@ -6,7 +6,8 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all #Category.first.articles
+    @articles = Category.find_by(id: params[:category_id]).articles
+    @category = Category.find_by(id: params[:category_id]).unique
   end
 
   def create
@@ -14,7 +15,7 @@ class ArticlesController < ApplicationController
 
     article.title = article_params[:title]
     article.text = article_params[:text]
-    article.categories << Category.where(id: article_params[:category_ids].map(&:to_i))
+    article.categories << Category.where(id: article_params[:category_ids].reject(&:epmty?).map(&:to_i))
     article.image.attach(article_params[:image])
 
     if article.save

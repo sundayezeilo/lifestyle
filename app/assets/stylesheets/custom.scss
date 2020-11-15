@@ -241,3 +241,22 @@ textarea {
     text-decoration: none;
   }
 }
+
+.cat-body {
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 250px;
+    color: #fff !important;
+  }
+
+  .cat-heading {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 2px solid #fb3;
+  }
+}

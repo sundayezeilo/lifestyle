@@ -12,19 +12,19 @@
         <li>
 
         <li class="nav-item">
-          <%= link_to "Fashon", '#', class: "nav-link" %>
+          <%= link_to "Fashion", articles_url(category_id: fetch_cat_id('fashion')), class: "nav-link" %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Business", '#', class: "nav-link" %>
+          <%= link_to "Business", articles_url(category_id: fetch_cat_id('business')), class: "nav-link" %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Sports", '#', class: "nav-link" %>
+          <%= link_to "Sports", articles_url(category_id: fetch_cat_id('sports')), class: "nav-link" %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Entertainment", '#', class: "nav-link" %>
+          <%= link_to "Entertainment", articles_url(category_id: fetch_cat_id('entertainment')), class: "nav-link" %>
         </li>
 
         <li class="nav-item">
@@ -32,7 +32,7 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to "TV", '#', class: "nav-link" %>
+          <%= link_to "TV", articles_url(category_id: fetch_cat_id('tv')), class: "nav-link" %>
         </li>
 
         <% if user_signed_in? %>
