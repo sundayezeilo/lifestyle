@@ -1,8 +1,8 @@
 <% provide(:title, 'Categories') %>
  
 <div class="row no-gutters">
-  <% if @categories.first.articles.any? %> 
-    <div class="col-12 cat-body cat-body-vote" style="background-image: url(<%= rails_blob_url(@categories.first.articles.first.image) %>)">
+  <% if @highest_voted_article %> 
+    <div class="col-12 cat-body cat-body-vote" style="background-image: url(<%= load_image(@highest_voted_article) %>)">
       <a href="#" class="media-link d-block pl-md-4">
         <span class="mt-2 cat-heading"><%= @categories.first.name_capitalize %> </span>
         <h5 class="mt-0 article-title"><%= @categories.first.articles.first.title %> </h5>
@@ -12,7 +12,7 @@
 
   <% @categories.each do |cat| %>
     <% if cat.articles.any? %> 
-      <div class="col-sm col-md-3 cat-body" style="background-image: url(<%= rails_blob_url(cat.articles.first.image) %>)">
+      <div class="col-sm col-md-3 cat-body" style="background-image: url(<%= load_image(cat.articles.first) %>)">
         <a href=<%= articles_url(category_id: cat.id) %> class="media-link d-block pl-md-4">
           <span class="mt-2 cat-heading"><%= cat.name_capitalize %> </span>
           <h5 class="mt-0 article-title"><%= cat.articles.first.title %> </h5>

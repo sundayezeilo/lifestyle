@@ -3,9 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.preload(:articles)
+    @highest_voted_article = Article.preload(:votes).order(:votes_count).first
   end
 
-  def new; end
-
-  def create; end
 end
