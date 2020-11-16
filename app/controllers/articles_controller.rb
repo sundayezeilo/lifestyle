@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
 
     if article.save
       flash[:success] = 'New article was successfully created.'
-      redirect_to root_path
+      redirect_to categories_path
     else
       flash[:warning] = 'Article was not created.'
       render :new
