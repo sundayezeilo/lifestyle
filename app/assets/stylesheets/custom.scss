@@ -346,7 +346,7 @@ ul.social-network {
 .votes-icons {
   position: absolute;
   bottom: 6px;
-  right: 20px;
+  right: 13vw;
 
   span {
     color: #544;
@@ -355,5 +355,25 @@ ul.social-network {
   i {
     font-size: 1.8em;
     text-align: center;
+  }
+
+  &:hover i {
+    font-weight: bold;;
+  }
+}
+
+.thumbs-down {
+  position: absolute;
+  bottom: 6px;
+  right: 2vw;
+
+  i {
+    font-size: 1.8em;
+    text-align: center;
+    color: #222;
+  }
+
+  &:hover i {
+    color: #e33;
   }
 }

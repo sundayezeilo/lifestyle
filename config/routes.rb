@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-  resources :votes, only: :create
+  resources :votes, only: %i[create]
+  delete '/votes', to: 'votes#destroy'
   resources :articles, only: %i[new create index]
   resources :categories, only: %i[new create index]
   devise_for :users
