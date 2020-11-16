@@ -3,7 +3,7 @@ module CategoriesHelper
     if article.image.attached?
       rails_blob_url(article.image)
     else
-      'assets/rails.svg'
+      Rails.env.development? ? 'assets/rails.svg' : 'https://cdn.learnenough.com/rails.svg'
     end
   end
 end

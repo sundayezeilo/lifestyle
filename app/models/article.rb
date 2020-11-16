@@ -3,7 +3,6 @@ class Article < ApplicationRecord
   has_and_belongs_to_many :categories
   has_one_attached :image, dependent: :destroy
   has_many :votes, dependent: :destroy
-  default_scope -> { order(created_at: :desc) }
   validates :author_id, presence: true
   validates :categories, presence: true
   validates :title, presence: true, length: { maximum: 50 }
@@ -11,6 +10,8 @@ class Article < ApplicationRecord
 
   validates :image, content_type: { in: %w[image/jpeg image/gif image/png], message: 'must be a valid image format' },
                     size: { less_than: 5.megabytes, message: 'should be less than 5MB' }
+
+  scope :order_most_recent, -> { order(created_at: :desc) }
 
   # Returns a resized image for display.
   def display_image
