@@ -5,7 +5,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mt-2 mt-lg-0 mr-auto">
+    
+      <ul class="navbar-nav mt-lg-0 mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         <li>
@@ -14,7 +15,13 @@
           <li class="nav-item">
             <%= link_to "#{cat.name}", articles_url(category_id: cat.id), class: "nav-link" %>
           </li>
-        <% end %>
+        <% end %>        
+      </ul>
+
+      <ul class="navbar-nav">
+        <li>
+          <%= link_to "New Article", new_article_path, class: "nav-link" %>
+        </li>
 
         <% if user_signed_in? %>
           <li>
@@ -27,10 +34,6 @@
         <% end %>
         <li>
           <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
-        </li>
-
-        <li>
-          <%= link_to "New Article", new_article_path, class: "nav-link" %>
         </li>
       </ul>
       <!--

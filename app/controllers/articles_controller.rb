@@ -12,14 +12,14 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = current_user.articles.build
+    @article = current_user.articles.build
 
-    article.title = article_params[:title]
-    article.text = article_params[:text]
-    article.categories << Category.where(id: article_params[:category_ids].reject(&:empty?).map(&:to_i))
-    article.image.attach(article_params[:image])
+    @article.title = article_params[:title]
+    @article.text = article_params[:text]
+    @article.categories << Category.where(id: article_params[:category_ids].reject(&:empty?).map(&:to_i))
+    @article.image.attach(article_params[:image])
 
-    if article.save
+    if @article.save
       flash[:success] = 'New article was successfully created.'
       redirect_to categories_path
     else

@@ -3,9 +3,7 @@ class VotesController < ApplicationController
 
   def create
     vote = current_user.votes.new(article_id: params[:article_id])
-    unless vote.save
-      flash[:warning] = 'You cannot vote an article more than once!'      
-    end
+    flash[:warning] = 'You cannot vote an article more than once!' unless vote.save
     redirect_back
   end
 

@@ -2,10 +2,9 @@
  
 <div class="row no-gutters">
   <% if @highest_voted_article %> 
-    <div class="col-12 cat-body cat-body-vote" style="background-image: url(<%= load_image(@highest_voted_article) %>)">
+    <div class="col-12 cat-body featured" style="background-image: url(<%= load_image(@highest_voted_article) %>)">
       <a href="#" class="media-link d-block pl-md-4">
-        <span class="mt-2 cat-heading"><%= @categories.first.name_capitalize %> </span>
-        <h5 class="mt-0 article-title"><%= @categories.first.articles.first.title %> </h5>
+        <h5 class="mt-0 article-title"><%= @highest_voted_article.title %> </h5>
       </a>
     </div>
   <% end %>
@@ -21,3 +20,4 @@
     <% end %>
   <% end %>
 </div>
+

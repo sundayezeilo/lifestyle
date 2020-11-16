@@ -11,10 +11,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
-  def after_sign_in_path_for(resource)
-    stored_location_for(resource) || categories_path
-  end
-  
   def redirect_back
     redirect_to(session[:forwarding_url])
     session.delete(:forwarding_url)
