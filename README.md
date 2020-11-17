@@ -46,7 +46,7 @@
 * All the features are implemented in the user interface.
 
 
-### Check out the Live Demo ot the App [here](https://lifestyle-ror-capstone.herokuapp.com).
+### Check out the Live version of the App [here](https://lifestyle-ror-capstone.herokuapp.com).
 
 
 ## Author
