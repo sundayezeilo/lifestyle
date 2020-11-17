@@ -16,7 +16,7 @@
 * A user can also vote or unvote (if he previusly voted) an article of his choice. A featured article is the one that is most voted.
 
 
-##  Environments
+##  Environments/System dependencies
 
 * Ruby version  - 2.7.1
 
@@ -24,20 +24,22 @@
 
 * Test Suite: RSpec/Capybara
 
-* Database - PostgreSQL (PG)
+* PostgreSQL database is required to be installed and configured on the local machine. Check this [tutorial](https://www.postgresqltutorial.com/install-postgresql/) for help.
 
-* System dependencies - all required dependencies are bundled as gems in the Gemfile.
+* All the required gems are bundled in the Gemfile.
 
 
 ##  Setup
 
 * Configuration - from the project directory, run``` bundle install ```from command line (terminal) to install all the required gems.
 
-* Database creation - After cloning the project, navigate to the project directory (```cd lifestyle-ror-capstone```), then execute the following commands``` rails db:create ```, then ``` rails db:migrate ```and ```rails db:seed``` to create and migrate database on the local machine, and also push included sample data to the database.
+* Run ```yarn install --check-files``` from root
 
-* Test the app using RSpec by running ```bundle exec rspec``` in the root directory.
+* Database creation - After cloning the project, navigate to the project directory (```cd lifestyle-ror-capstone```), then execute the following commands``` rails db:create ```, then ``` rails db:migrate ```and ```rails db:seed``` to create and migrate database on the local machine.
 
 * Run ```rails db:seed``` to push some included sample data to the database.
+
+* Test the app using RSpec by running ```bundle exec rspec``` in the root directory.
 
 * Start Rails sever by running the command ```rails sever``` or ```rails s``` in the root directory.
 
@@ -46,7 +48,7 @@
 * All the features are implemented in the user interface.
 
 
-### Check out the Live version of the App [here](https://lifestyle-ror-capstone.herokuapp.com).
+### You can also check out the Live version of the App [here](https://lifestyle-ror-capstone.herokuapp.com).
 
 
 ## Author
