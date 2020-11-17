@@ -4,7 +4,11 @@
     <% @articles.each do |article| %>
       <div class="col-sm col-md-6">
         <div class="media">
-          <%= image_tag(article.display_image) if article.image.attached? %>
+          <% if article.image.attached? %>
+            <%= image_tag(article.display_image) %>
+          <% else %>
+            <%= image_tag("https://content.thriveglobal.com/wp-content/uploads/2019/01/GettyImages-955441104.jpg", alt: "default image") %>
+          <% end %>
           <div class="media-body">
             <span class="cat-heading"><%= @category.name_capitalize %> </span>
             <h5 class="media-title"><%= article.title %> </h5>
