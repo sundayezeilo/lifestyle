@@ -1,20 +1,20 @@
 <% provide(:title, 'Categories') %>
  
 <div class="row no-gutters">
-  <% if @highest_voted_article %> 
-    <div class="col-12 cat-body featured" style="background-image: url(<%= load_image(@highest_voted_article) %>)">
+  <% if @most_voted_article %> 
+    <div class="col-12 cat-body featured" style="background-image: url(<%= load_image(@most_voted_article) %>)">
       <a href="#" class="media-link d-block pl-md-4">
-        <h5 class="article-title mt-3"><%= @highest_voted_article.title %> </h5>
+        <h5 class="article-title mt-3"><%= @most_voted_article.title %> </h5>
       </a>
     </div>
   <% end %>
 
   <% @categories.each do |cat| %>
     <% if cat.articles.any? %> 
-      <div class="col-sm col-md-3 cat-body" style="background-image: url(<%= load_image(cat.articles.first) %>)">
+      <div class="col-sm col-md-3 cat-body" style="background-image: url(<%= load_image(cat.articles.order_most_recent.first) %>)">
         <a href=<%= articles_url(category_id: cat.id) %> class="media-link d-block pl-md-4">
           <span class="mt-2 cat-heading"><%= cat.name_capitalize %> </span>
-          <h5 class="article-title"><%= cat.articles.first.title %> </h5>
+          <h5 class="article-title"><%= cat.articles.order_most_recent.first.title %> </h5>
         </a>
       </div>
     <% end %>
