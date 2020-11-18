@@ -35,3 +35,4 @@
 yarn-debug.log*
 .yarn-integrity
 config/master.key
+app/views/layouts/sample.html
