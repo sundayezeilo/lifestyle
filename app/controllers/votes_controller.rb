@@ -8,8 +8,9 @@ class VotesController < ApplicationController
   end
 
   def destroy
-    vote = Vote.find_by(user_id: current_user.id, article_id: params[:article_id])
-    vote.destroy if vote
+    if (vote = Vote.find_by(user_id: current_user.id, article_id: params[:article_id]))
+      vote.destroy
+    end
     redirect_back
   end
 end

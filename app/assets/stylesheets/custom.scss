@@ -254,8 +254,8 @@ textarea {
 
 footer {
   color: white;
-  margin-top: 50px;
-  margin-bottom: 0%;
+  margin-top: 200px;
+  margin-bottom: 30px;
 
   a {
     color: #fff;
@@ -276,12 +276,30 @@ footer {
     .copy {
       font-size: 12px;
       padding: 10px;
+
+      .privacy-text {
+        color: #f45e05;
+      }
     }
 
     .footer-brand {
       max-width: 25%;
-      display: inline-block;
+
+      #logo {
+        color: #fff;
+        float: none;
+      }
     }
+
+    .social-wrap {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  footer {
+    margin-top: 280px;
   }
 }
 
@@ -291,6 +309,7 @@ ul.social-network {
   display: inline-flex;
   list-style: none;
   padding: 0;
+  margin-bottom: 0 !important;
 
   li {
     display: inline;
@@ -346,7 +365,7 @@ ul.social-circle li {
   a {
     display: inline-block;
     position: relative;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
