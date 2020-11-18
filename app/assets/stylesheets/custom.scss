@@ -21,8 +21,19 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 body {
-  margin-top: 80px;
   background-color: #4e443e;
+}
+
+.container,
+.container-fluid {
+  border: solid #4e443e;
+  border-width: 0 4px;
+}
+
+@media (min-width: 600px) {
+  body {
+    margin-top: 70px;
+  }
 }
 
 section {
@@ -244,7 +255,8 @@ textarea {
 footer {
   background: #4e443f;
   color: white;
-  margin-top: 100px;
+  margin-top: 50px;
+  width: 100%;
 
   a {
     color: #fff;
@@ -274,7 +286,7 @@ footer {
 ul.social-network {
   list-style: none;
   display: inline;
-  margin-left: 0 !important;
+  // margin-left: 0 !important;
   padding: 0;
 
   li {
