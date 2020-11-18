@@ -3,6 +3,6 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.preload(articles: [{ image_attachment: :blob }]).orderby_priority
-    @most_voted_article = Article.all.order('votes_count').last
+    @most_voted_article = Article.all.order(:votes_count).last
   end
 end

@@ -1,0 +1,24 @@
+
+<div class="col-sm col-md-6">
+  <div class="media">
+    <% if article.image.attached? %>
+      <%= image_tag(article.display_image) %>
+    <% else %>
+      <%= image_tag("https://content.thriveglobal.com/wp-content/uploads/2019/01/GettyImages-955441104.jpg", alt: "default image") %>
+    <% end %>
+    <div class="media-body">
+      <span class="cat-heading"><%= @category.name_capitalize %> </span>
+      <h5 class="media-title"><%= article.title %> </h5>
+      <%= article.text %>
+    </div>
+
+    <div class="votes-icons">
+      <%= link_to("<i class='fa fa-thumbs-up' aria-hidden='true'></i>".html_safe, votes_url(article_id: article.id), method: :post) %>
+      <span class="mr-2 votes-stat"><%= pluralize(article.votes.count, 'vote') %></span>
+    </div>
+    <div class="thumbs-down">
+      <%= link_to("<i class='fa fa-thumbs-down' aria-hidden='true'></i>".html_safe, votes_url(article_id: article.id), method: :delete) %>
+    </div>
+
+  </div>
+</div>
