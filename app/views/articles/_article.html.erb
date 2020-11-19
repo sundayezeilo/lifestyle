@@ -1,24 +1,30 @@
-
-<div class="col-sm col-md-6">
+<div class="col-md-6">
   <div class="media">
     <% if article.image.attached? %>
       <%= image_tag(article.display_image) %>
     <% else %>
-      <%= image_tag("https://content.thriveglobal.com/wp-content/uploads/2019/01/GettyImages-955441104.jpg", alt: "default image") %>
+      <%= image_tag("https://www.sortiraparis.com/images/80/83517/577986-visuel-paris-velo-quai-2.jpg", alt: "default image") %>
     <% end %>
+
     <div class="media-body">
-      <span class="cat-heading"><%= @category.name_capitalize %> </span>
+      <span class="cat-heading"><%= @category.name.capitalize %> </span>
       <h5 class="media-title"><%= article.title %> </h5>
-      <%= article.text %>
-    </div>
+      <p><%= fetch_truncated(article.text, 40) %></p>
+      <h6 class='article-author'><%= article.author.name.capitalize %></h6>
 
-    <div class="votes-icons">
-      <%= link_to("<i class='fa fa-thumbs-up' aria-hidden='true'></i>".html_safe, votes_url(article_id: article.id), method: :post) %>
-      <span class="mr-2 votes-stat"><%= pluralize(article.votes.count, 'vote') %></span>
-    </div>
-    <div class="thumbs-down">
-      <%= link_to("<i class='fa fa-thumbs-down' aria-hidden='true'></i>".html_safe, votes_url(article_id: article.id), method: :delete) %>
-    </div>
+      <ul class='vote-button-wrap'>    
+        <li class="mb-1">
+          <%= vote_up("<svg aria-hidden='true' class='m0 svg-icon icon-arrow-up' viewBox='0 0 36 36'><path d='M2 26h32L18 10 2 26z'></path></svg>", article.id) %>
+        </li>
 
+        <li class="votes-stat">
+          <%= pluralize(article.votes.count, 'vote') %>
+        </li>
+
+        <li class="mt-1">
+          <%= vote_down("<svg aria-hidden='true' class='m0 svg-icon icon-arrow-down' viewBox='0 0 36 36'><path d='M2 10h32L18 26 2 10z'></path></svg>", article.id) %>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

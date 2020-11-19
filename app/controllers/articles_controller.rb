@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
       flash[:success] = 'New article was successfully created.'
       redirect_to categories_path
     else
-      flash[:warning] = 'Article was not created.'
+      flash.now[:danger] = @article.errors.full_messages[0]
       render :new
     end
   end

@@ -3,9 +3,13 @@ class Category < ApplicationRecord
   validates :priority, presence: true
   validates :name, presence: true, length: { maximum: 20 }
 
-  scope :orderby_priority, -> { order('priority') }
+  scope :order_by_priority, -> { order('priority') }
 
   def name_capitalize
-    name.capitalize
+    cap_name = []
+    name.split(' ').each do |n|
+      cap_name << n.capitalize
+    end
+    cap_name.join(' ')
   end
 end
