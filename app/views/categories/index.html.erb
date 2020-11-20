@@ -1,14 +1,12 @@
-<% provide(:title, 'Categories') %>
- 
+<% provide(:title, 'Categories') %> 
 <div class="row no-gutters">
-  <% if @most_voted_article %> 
+  <% if @most_voted_article.present? %> 
     <div class="col-12 cat-body featured" style="background-image: url(<%= load_image(@most_voted_article) %>)">
       <a href="#" class="media-link d-block pl-md-4">
         <h5 class="article-title mt-3"><%= @most_voted_article.title %> </h5>
       </a>
     </div>
   <% end %>
-
   <%= render @categories %>
 </div>
 
