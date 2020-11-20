@@ -1,11 +1,6 @@
 <div class="col-md-6">
   <div class="media">
-    <% if article.image.attached? %>
-      <%= image_tag(article.display_image) %>
-    <% else %>
-      <%= image_tag("https://www.sortiraparis.com/images/80/83517/577986-visuel-paris-velo-quai-2.jpg", alt: "default image") %>
-    <% end %>
-
+    <%= show_image(article) %>
     <div class="media-body">
       <span class="cat-heading"><%= name_capitalize(@category.name) %> </span>
       <h5 class="media-title"><%= article.title %> </h5>
