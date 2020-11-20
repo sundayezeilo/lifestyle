@@ -68,3 +68,7 @@ Feel free to check the [issues page](https://github.com/ezeilo-su/lifestyle-ror-
 ## Show your support
 
 Show support by giving a ⭐️ if you like this project!
+
+##  Credit
+
+* Credit to [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) for this very creative design. ⭐️⭐️⭐️⭐️⭐️
