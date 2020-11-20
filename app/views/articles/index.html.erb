@@ -1,4 +1,4 @@
-<% provide(:title, "#{@category.name.capitalize}") %>
+<% provide(:title, "#{ name_capitalize(@category.name) }") %>
 <div class="row no-gutters">
   <%= render @articles %>
 </div>

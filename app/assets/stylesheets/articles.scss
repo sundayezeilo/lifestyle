@@ -9,7 +9,6 @@
   .media-body {
     width: 50%;
     height: 100%;
-    display: -webkit-box;
     -webkit-line-clamp: 10;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -35,7 +34,7 @@
 
     .article-author {
       position: absolute;
-      bottom: 0;
+      bottom: 1em;
     }
   }
 }

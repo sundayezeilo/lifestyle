@@ -19,4 +19,12 @@ module ApplicationHelper
       message_type
     end
   end
+
+  def name_capitalize(name)
+    cap_name = []
+    name.split(' ').each do |n|
+      cap_name << n.capitalize
+    end
+    cap_name.join(' ')
+  end
 end
