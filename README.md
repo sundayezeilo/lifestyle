@@ -71,4 +71,4 @@ Show support by giving a ⭐️ if you like this project!
 
 ##  Credit
 
-* Credit to [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) for this very creative design. ⭐️⭐️⭐️⭐️⭐️
+* Credit to [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) for this very creative UI. ⭐️⭐️⭐️⭐️⭐️
