@@ -7,10 +7,11 @@ module ArticlesHelper
   end
 
   def show_image(article)
-    if article && article.image.attached?
+    if article&.image&.attached?
       image_tag(article.display_image)
     else
-      image_tag("https://www.sortiraparis.com/images/80/83517/577986-visuel-paris-velo-quai-2.jpg", alt: "default image")
-    end    
+      image_tag('https://www.sortiraparis.com/images/80/83517/577986-visuel-paris-velo-quai-2.jpg',
+                alt: 'default image')
+    end
   end
 end
