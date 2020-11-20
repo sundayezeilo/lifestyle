@@ -7,17 +7,17 @@
     <div class="collapse navbar-collapse" id="navbarNav">
     
       <ul class="navbar-nav mt-lg-0 ml-auto mr-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          <li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <li>
 
-          <% Category.all.each do |cat| %>
+        <% Category.all.each do |cat| %>
+          <% if cat.articles.any? %>
             <li class="nav-item">
               <%= link_to "#{cat.name}", articles_url(category_id: cat.id), class: "nav-link" %>
             </li>
           <% end %>
-        <% end %>     
+        <% end %>   
       </ul>
 
       <ul class="navbar-nav">

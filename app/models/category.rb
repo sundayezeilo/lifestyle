@@ -4,6 +4,7 @@ class Category < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20 }
 
   scope :order_by_priority, -> { order('priority') }
+  scope :fetch, -> { preload(articles: [{ image_attachment: :blob }]).order_by_priority.limit(4) }
 
   def name_capitalize
     cap_name = []

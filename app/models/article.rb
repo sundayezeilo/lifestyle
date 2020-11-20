@@ -12,6 +12,7 @@ class Article < ApplicationRecord
                     size: { less_than: 5.megabytes, message: 'should be less than 5MB' }
 
   scope :order_most_recent, -> { order(created_at: :desc) }
+  scope :fetch_most_voted, -> { preload({ image_attachment: :blob }).order('votes_count DESC').order_most_recent[0] }
 
   # Returns a resized image for display.
   def display_image
