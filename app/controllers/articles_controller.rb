@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: %i[new create]
 
   def new
     @article = Article.new
@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.articles.build(article_params)    
+    @article = current_user.articles.build(article_params)
     if @article.save
       flash[:success] = 'New article was successfully created.'
       redirect_to categories_path

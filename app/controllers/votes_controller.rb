@@ -15,7 +15,7 @@ class VotesController < ApplicationController
   end
 
   private
-  
+
   def vote_param
     params.permit(:article_id)
   end

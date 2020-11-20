@@ -69,6 +69,7 @@ Feel free to check the [issues page](https://github.com/ezeilo-su/lifestyle-ror-
 
 Show support by giving a ⭐️ if you like this project!
 
+
 ## ⭐️⭐️⭐️⭐️⭐️
 
-* Design Credit to [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) for this very creative UI.
+##  🤝 Design Credit to [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) for this very creative UI.
