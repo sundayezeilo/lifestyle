@@ -129,7 +129,11 @@ input {
   height: auto !important;
 }
 
-.new-article {
+.new-article,
+label,
+form em,
+.form-wrap p,
+.form-wrap h6 {
   color: #fff;
 }
 

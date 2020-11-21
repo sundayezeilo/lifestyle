@@ -1,7 +1,7 @@
 <% provide(:title, "Log in") %>
 <h1>Log in</h1>
 <div class="row justify-content-center">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 form-wrap">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= f.label :email %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
