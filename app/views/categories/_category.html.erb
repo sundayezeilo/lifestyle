@@ -1,4 +1,4 @@
-<% if category.articles.any? %> 
+<% if !category.articles.empty? %> 
   <div class="col-md-3 cat-body" style="background-image: url(<%= load_image(category.articles.order_most_recent.take(1)) %>)">
     <a href=<%= articles_url(category_id: category.id) %> class="media-link d-block pl-md-4">
       <span class="mt-2 cat-heading"><%= name_capitalize(category.name) %> </span>
