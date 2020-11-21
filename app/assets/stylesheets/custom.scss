@@ -21,6 +21,8 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 body {
+  height: 100%;
+  margin: 0;
   overflow-x: hidden;
   background-color: #4e443e;
 }
@@ -114,7 +116,6 @@ p {
   font-family: "acumin-pro", "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* forms */
 input,
 textarea,
 select,
@@ -167,8 +168,9 @@ textarea {
 
 footer {
   color: white;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  bottom: 0;
+  margin-top: 50px;
+  position: sticky;
 
   li.a {
     color: #fff;
@@ -207,12 +209,6 @@ footer {
     .social-wrap {
       font-size: 14px;
     }
-  }
-}
-
-@media (min-width: 768px) {
-  footer {
-    margin-bottom: 100px;
   }
 }
 

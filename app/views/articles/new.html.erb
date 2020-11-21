@@ -16,7 +16,7 @@
       </div>
 
       <%= collection_check_boxes(:article, :category_ids, Category.all, :id, :name_capitalize) do |b| %>
-        <div class="form-group">
+        <div>
           <%= b.check_box(class: "form-check-input", type: "checkbox") %>
           <%= b.label(class: "form-check-label") %>
         </div>
