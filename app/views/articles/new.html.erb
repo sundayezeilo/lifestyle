@@ -1,7 +1,7 @@
 <% provide(:title, 'New Article') %>
 <div class="row justify-content-center">
   <div class="col-md-6 new-article">
-    <h1>Write a new article</h1>
+    <h1 class="new-article-heading">Write a new article</h1>
     <%= form_with(model: @article, local: true) do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control', placeholder: "New article title..." %>
