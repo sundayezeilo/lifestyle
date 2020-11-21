@@ -3,7 +3,6 @@
     <a href=<%= articles_url(category_id: category.id) %> class="media-link d-block pl-md-4">
       <span class="mt-2 cat-heading"><%= name_capitalize(category.name) %> </span>
       <h5 class="article-title"><%= category.articles.first.title %> </h5>
-      <h6 class='article-author'><%= name_capitalize(category.articles.first.author.name) %></h6>
     </a>
   </div>
 <% end %>
