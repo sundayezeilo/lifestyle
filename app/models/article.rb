@@ -15,7 +15,7 @@ class Article < ApplicationRecord
   scope :fetch_most_voted, -> { preload({ image_attachment: :blob }).order(votes_count: :desc).order_most_recent[0] }
 
   # Returns a resized image for display.
-  # def display_image
-  #   image.variant(resize_to_limit: [500, 500])
-  # end
+  def display_image
+    image.variant(resize_to_limit: [500, 500])
+  end
 end
