@@ -2,7 +2,7 @@ module CategoriesHelper
   def load_image(article = nil)
     if article&.image&.attached?
       if Rails.env.production?
-        article.image.expiring_url
+        article.image.variant
       else
         rails_blob_url(article.image)
       end
