@@ -92,7 +92,7 @@ p {
   float: left;
   margin-right: 10px;
   font-family: "acumin-pro", "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 2em;
+  font-size: 1.4em;
   color: #4e443e;
   letter-spacing: -1px;
   font-weight: 400;
@@ -101,6 +101,12 @@ p {
   &:hover {
     color: inherit;
     text-decoration: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .page-brand {
+    font-size: 2em;
   }
 }
 
