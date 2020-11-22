@@ -72,9 +72,15 @@ RSpec.describe User, type: :model do
   end
 
   describe 'articles associations' do
-    context 'with article' do
+    context 'with articles' do
       it 'should respond to articles' do
         expect(@user).to respond_to(:articles)
+      end
+    end
+
+    context 'with votes' do
+      it 'should respond to votes' do
+        expect(@user).to respond_to(:votes)
       end
     end
   end

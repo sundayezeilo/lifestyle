@@ -11,30 +11,7 @@ RSpec.describe Article, type: :model do
     @category.save
   end
 
-  describe 'validation' do
-    describe 'validations' do
-      it 'should be valid' do
-        @article.categories << @category
-        expect(@article).to be_valid
-      end
-
-      it 'should have a author attribute' do
-        expect(@article).to respond_to(:author)
-      end
-
-      it 'should have a title attribute' do
-        expect(@article).to respond_to(:title)
-      end
-
-      it 'should have a text attribute' do
-        expect(@article).to respond_to(:text)
-      end
-
-      it 'should have a title attribute' do
-        expect(@article).to respond_to(:title)
-      end
-    end
-
+  describe 'validations' do
     context 'with invalid attributes' do
       it 'should not be valid without an author' do
         @article.author = nil
@@ -62,6 +39,22 @@ RSpec.describe Article, type: :model do
     end
 
     context 'with valid attributes' do
+      it 'should have a author attribute' do
+        expect(@article).to respond_to(:author)
+      end
+
+      it 'should have a title attribute' do
+        expect(@article).to respond_to(:title)
+      end
+
+      it 'should have a text attribute' do
+        expect(@article).to respond_to(:text)
+      end
+
+      it 'should have a title attribute' do
+        expect(@article).to respond_to(:title)
+      end
+
       it 'should be valid' do
         @article.categories << @category
         @article.save
@@ -89,9 +82,6 @@ RSpec.describe Article, type: :model do
 
     context 'article order scope' do
       before do
-        @category = Category.new(name: 'business', priority: 2)
-        @category.save
-
         @older_article = FactoryBot.build(:article, author: @user, created_at: 1.day.ago)
         @older_article.categories << @category
         @older_article.save
