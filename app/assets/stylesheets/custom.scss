@@ -88,7 +88,7 @@ p {
   line-height: 1.7em;
 }
 
-#logo {
+.page-brand {
   float: left;
   margin-right: 10px;
   font-family: "acumin-pro", "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -96,6 +96,7 @@ p {
   color: #4e443e;
   letter-spacing: -1px;
   font-weight: 400;
+  font-weight: bold;
 
   &:hover {
     color: inherit;
@@ -110,14 +111,6 @@ p {
   background-color: #f76107;
   border-radius: 50%;
   display: inline-block;
-}
-
-.home-page-brand {
-  font-size: 2em;
-  color: #4e443e;
-  letter-spacing: -1px;
-  font-weight: bold;
-  font-family: "acumin-pro", "Acumin Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 input,
@@ -205,18 +198,30 @@ footer {
       }
     }
 
+    .copy,
+    .social-wrap,
     .footer-brand {
-      max-width: 25%;
+      padding-left: 20px;
+    }
 
-      #logo {
-        color: #fff;
-        float: none;
-      }
+    .page-brand {
+      color: #fff;
+      float: none;
+      font-weight: normal;
     }
 
     .social-wrap {
       font-size: 14px;
     }
+  }
+}
+
+@media (min-width: 600px) {
+  .copy,
+  .social-wrap,
+  .footer-brand {
+    text-align: center;
+    padding-left: unset;
   }
 }
 
