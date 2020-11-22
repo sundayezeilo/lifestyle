@@ -105,19 +105,24 @@ p {
   }
 }
 
-@media (min-width: 600px) {
-  .page-brand {
-    font-size: 2em;
-  }
-}
-
 .dot {
-  height: 12px;
-  width: 12px;
+  height: 8px;
+  width: 8px;
   margin-left: 3px;
   background-color: #f76107;
   border-radius: 50%;
   display: inline-block;
+}
+
+@media (min-width: 600px) {
+  .page-brand {
+    font-size: 2em;
+
+    .dot {
+      height: 12px;
+      width: 12px;
+    }
+  }
 }
 
 input,
@@ -171,21 +176,6 @@ form em,
   }
 }
 
-.checkbox {
-  margin-top: -15px !important;
-  margin-bottom: 10px;
-
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
-}
-
-#session_remember_me {
-  width: auto;
-  margin-left: 0;
-}
-
 textarea {
   height: 100px;
   resize: vertical;
@@ -196,6 +186,7 @@ textarea {
 
 footer {
   color: white;
+  padding-bottom: 20px;
 
   li.a {
     color: #fff;
