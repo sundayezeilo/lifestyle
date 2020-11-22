@@ -144,6 +144,23 @@ form em,
   color: #fff;
 }
 
+.signin-heading,
+.signup-heading,
+.new-article-heading {
+  font-size: 2em;
+  margin-top: 10vh;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 600px) {
+  .signin-heading,
+  .signup-heading,
+  .new-article-heading {
+    font-size: 2.4em;
+    margin: 20px auto;
+  }
+}
+
 #error_explanation {
   color: red;
 
@@ -222,18 +239,21 @@ footer {
   }
 }
 
-@media (min-width: 600px) {
-  .copy,
-  .social-wrap,
-  .footer-brand {
-    text-align: center;
-    padding-left: unset;
-  }
-}
-
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   footer {
     margin-top: 40px;
+
+    .copy,
+    .social-wrap,
+    .footer-brand {
+      text-align: center;
+      padding-left: 0;
+    }
+
+    .footer-brand {
+      position: relative;
+      max-width: 25%;
+    }
   }
 }
 
