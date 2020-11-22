@@ -32,7 +32,7 @@ body {
 
 .container,
 .container-fluid {
-  min-height: 100%;
+  min-height: 80%;
   border: solid #4e443e;
   border-width: 0 4px;
 }
@@ -222,7 +222,7 @@ footer {
 
 @media (min-width: 600px) {
   footer {
-    margin: 40px auto;
+    margin-top: 40px;
   }
 }
 
