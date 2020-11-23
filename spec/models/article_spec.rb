@@ -92,7 +92,7 @@ RSpec.describe Article, type: :model do
       end
 
       it 'should have the right articles in the right order' do
-        expect(Article.all.order_most_recent).to eq([@newer_article.reload, @older_article.reload])
+        expect(Article.all).to eq([@newer_article.reload, @older_article.reload])
       end
     end
   end
