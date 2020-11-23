@@ -50,7 +50,7 @@
 
 ### You can also check out the Live version of the App [here](https://iotpost.herokuapp.com).
 
-##  See project screenshots below:
+###  See project screenshots below:
 
 
 ![User signup page](screenshots/signup.png)
