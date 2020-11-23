@@ -1,8 +1,8 @@
 <% if category.articles.any? %> 
-  <div class="col-md-3 cat-body" style="background-image: url(<%= load_image(category.articles.first) %>)">
+  <div class="col-md-3 cat-body" style="background-image: url(<%= load_image(category.articles.order_most_recent.first) %>)">
     <a href=<%= articles_url(category_id: category.id) %> class="media-link d-block pl-md-4">
       <span class="mt-2 cat-heading"><%= name_capitalize(category.name) %> </span>
-      <h5 class="article-title"><%= category.articles.first.title %> </h5>
+      <h5 class="article-title"><%= category.articles.order_most_recent.first.title %> </h5>
     </a>
   </div>
 <% end %>

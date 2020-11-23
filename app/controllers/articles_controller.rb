@@ -6,7 +6,9 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Category.find_by(id: params[:category_id]).articles.preload([:votes, { image_attachment: :blob }])
+    @articles = Category.find_by(id: params[:category_id]).articles.preload(
+      [:votes, { image_attachment: :blob }]
+    ).order_most_recent
     @category = Category.find_by(id: params[:category_id])
     store_location
   end
