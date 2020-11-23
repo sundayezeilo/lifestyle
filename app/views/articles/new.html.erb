@@ -1,0 +1,37 @@
+<% provide(:title, 'New Article') %>
+<div class="row justify-content-center">
+  <div class="col-md-6 new-article">
+    <h1 class="new-article-heading">Write a new article</h1>
+    <%= form_with(model: @article, local: true) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control', placeholder: "New article title..." %>
+      <div class="field">
+        <%= f.label :text %>
+        <%= f.text_area :text, placeholder: "Write a new article..." %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :image, "Attach an Image" %><br />
+        <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png", style:"width: inherit;" %>
+      </div>
+
+      <%= collection_check_boxes(:article, :category_ids, Category.all, :id, :name_capitalize) do |b| %>
+        <div>
+          <%= b.check_box(class: "form-check-input", type: "checkbox") %>
+          <%= b.label(class: "form-check-label") %>
+        </div>
+      <% end %>
+
+      <%= f.submit "Create", class: "btn btn-primary" %>
+    <% end %>
+
+    <script type="text/javascript">
+      $("#micropost_image").bind("change", function() {
+        const size_in_megabytes = this.files[0].size/1024/1024;
+      if (size_in_megabytes > 5) {
+        alert("Maximum file size is 5MB. Please choose a smaller file.");
+        $("#micropost_image").val("");
+      }});
+    </script>
+  </div>
+</div>

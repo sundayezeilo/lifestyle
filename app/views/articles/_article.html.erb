@@ -1,0 +1,25 @@
+<div class="col-md-6">
+  <div class="media">
+    <%= show_image(article) %>
+    <div class="media-body">
+      <span class="cat-heading"><%= name_capitalize(@category.name) %> </span>
+      <h5 class="media-title"><%= article.title %> </h5>
+      <p><%= fetch_truncated(article.text, 40) %></p>
+      <h6 class='article-author'><%= name_capitalize(article.author.name) %></h6>
+
+      <ul class='vote-button-wrap'>    
+        <li class="mb-1">
+          <%= vote_up("<svg aria-hidden='true' class='m0 svg-icon icon-arrow-up' viewBox='0 0 36 36'><path d='M2 26h32L18 10 2 26z'></path></svg>", article.id) %>
+        </li>
+
+        <li class="votes-stat">
+          <%= pluralize(article.votes.count, 'vote') %>
+        </li>
+
+        <li class="mt-1">
+          <%= vote_down("<svg aria-hidden='true' class='m0 svg-icon icon-arrow-down' viewBox='0 0 36 36'><path d='M2 10h32L18 26 2 10z'></path></svg>", article.id) %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

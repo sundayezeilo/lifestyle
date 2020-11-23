@@ -1,0 +1,36 @@
+.cat-body {
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    color: #fff !important;
+
+    h5 {
+      position: absolute;
+      bottom: 2em;
+    }
+
+    .article-author {
+      position: absolute;
+      bottom: 0;
+      color: #988;
+      font-weight: bold;
+    }
+  }
+
+  .cat-heading {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 2px solid #fb3;
+  }
+}
+
+.featured {
+  height: 280px;
+}

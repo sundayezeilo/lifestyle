@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'categories#index'
+  resources :votes, only: %i[create]
+  delete '/votes', to: 'votes#destroy'
+  resources :articles, only: %i[new create index]
+  resources :categories, only: %i[index]
+  devise_for :users
 end
